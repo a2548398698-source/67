@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刘琦先生 - 个人网站 | 67爱好者</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            max-width: 900px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .favorite-number {
+            font-size: 4em;
+            font-weight: bold;
+            color: #FFD700;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            animation: pulse 2s infinite;
+            margin: 20px 0;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .hobbies {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        .hobby-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin: 10px;
+            border-radius: 15px;
+            min-width: 250px;
+            transition: transform 0.3s;
+        }
+        .hobby-item:hover {
+            transform: scale(1.05);
+        }
+        .hobby-icon {
+            font-size: 4em;
+            margin-bottom: 10px;
+        }
+        .counter {
+            font-size: 2em;
+            background: rgba(255, 215, 0, 0.2);
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        .links {
+            margin-top: 30px;
+        }
+        .links a {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border: 2px solid #FFD700;
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+        .links a:hover {
+            background: #FFD700;
+            color: #333;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>欢迎来到刘琦先生的个人网站！</h1>
+        <div class="favorite-number">67</div>
+        <p>我是刘琦，最喜欢的数字是<strong>67</strong>。生活就是要享受！</p>
+        
+        <div class="counter">
+            我的幸运数字已出现 <span id="count">5</span> 次（包括爱好区！）
+        </div>
+
+        <h2 style="margin: 30px 0;">🎉 我的爱好</h2>
+        <div class="hobbies">
+            <div class="hobby-item">
+                <div class="hobby-icon">🍗</div>
+                <h3>吃大黑鸡鸡</h3>
+                <p>超级热爱黑鸡美食！炖汤、烤鸡，67种吃法都试过。美味到飞起！</p>
+            </div>
+            <div class="hobby-item">
+                <div class="hobby-icon">🍑</div>
+                <h3>喜欢屁股</h3>
+                <p>欣赏完美曲线与力量（健身&艺术）。67%的完美源于此！</p>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="mailto:your-email@example.com">联系我分享食谱</a>
+            <a href="https://github.com/yourusername" target="_blank">我的67项目</a>
+            <a href="#" onclick="alert('67 是我的最爱！大黑鸡鸡+完美屁股=完美生活！')">惊喜按钮</a>
+        </div>
+        <footer>
+            &copy; 2023 刘琦先生 | 67 Forever | 吃货&曲线爱好者
+        </footer>
+    </div>
+
+    <script>
+        // 更新计数器
+        let text = document.body.innerText;
+        let count = (text.match(/67/g) || []).length;
+        document.getElementById('count').textContent = count;
+
+        // 动态闪烁
+        setInterval(() => {
+            document.querySelector('.favorite-number').style.color = 
+                Math.random() > 0.5 ? '#FFD700' : '#FF69B4';
+        }, 2000);
+
+        // 爱好区 hover 效果
+        document.querySelectorAll('.hobby-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.style.background = 'rgba(255, 215, 0, 0.4)';
+                setTimeout(() => { item.style.background = 'rgba(255, 255, 255, 0.2)'; }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
